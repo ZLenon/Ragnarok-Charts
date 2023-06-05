@@ -9,20 +9,38 @@
 </head>
 
 <body>
-  <h1>Ragnarok NPC's</h1>
-  <input type="text" name="" id="numeracao">
-  <button id="confirma">confirma</button>
-  <button id="avanca" >Avança</button>
-  <button id="retorna">Retorna</button>
-  <br>
-  <button id="favorito">Favoritar</button>
-  <br>
-  <img id="mygif" src="https://static.ragnaplace.com/db/npc/gif/487.gif" alt="myGifRagnarok">
-  <br>
-  <h3>Favoritados
-    <div id="divImages"></div>
+  <header>
+    <h1>Ragnarok NPC's</h1>
+    <button id="retorna">Retorna</button>
+    <button id="avanca">Avança</button>
+    <br>
+    <input type="number" id="idPersona" placeholder="Busca por Id">
+    <button id="confirma">Buscar</button>
+    <br>
+  </header>
+  <main>
+    <fieldset>
+      <legend>Crie um Personagem</legend>
+      <input type="text" id="name" placeholder="insira um nome">
+      <br>
+      <input type="text" id="clase" placeholder="insira uma classe">
+      <br>
+      <input type="number" id="atk" placeholder="insira um atk">
+      <br>
+      <input type="number" id="def" placeholder="insira um def">
+      <br>
+      <button id="criaPersona">Criar Personagem</button>
+      <br>
+    </fieldset>
+  </main>
+  <nav>
+    <img id="urlGifPersonas" src="https://static.ragnaplace.com/db/npc/gif/63.gif" alt="myGifRagnarok">
+    <br>
+  </nav>
+  <h3>Cards Criados
+    <div id="cardPersona"></div>
   </h3>
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 
 </html>

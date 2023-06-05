@@ -1,61 +1,70 @@
-const mygif = document.getElementById('mygif'); // tag IMG
-const confirmaBtn =  document.getElementById('confirma'); //bottao
-const avancaBtn =  document.getElementById('avanca'); //bottao
-const retornaBtn = document.getElementById('retorna'); //bottao
-const favoritarBtn = document.getElementById('favorito') // bottao favoritar
-const numeracao = document.getElementById('numeracao'); //inpult text
-const divImages = document.getElementById('divImages'); // div das imagens favoritadas
+const urlGifPersona = document.getElementById('urlGifPersonas'); // tag IMG
+const confirmaBTN =  document.getElementById('confirma'); //bottao
+const nextBTN =  document.getElementById('avanca'); //bottao
+const backBTN = document.getElementById('retorna'); //bottao 
+const criaPersona = document.getElementById('criaPersona') // bottao favoritar
+const idPersona = document.getElementById('idPersona'); //inpult text
+const cardPersonas = document.getElementById('cardPersona'); // div das imagens favoritadas
+const name =  document.getElementById('name');
+const clase =  document.getElementById('clase');
+const atk =  document.getElementById('atk');
+const def =  document.getElementById('def');
+import { personagens } from './Model/personagens.js';
 
-
-let valorAtual = 487;
-numeracao.value = valorAtual;
-let favoritos = [];
+let valorAtual = '';
+idPersona.value = valorAtual;
 
 const search = () => {
-  valorAtual = +numeracao.value;
+  valorAtual = +idPersona.value;
   let newGif = `https://static.ragnaplace.com/db/npc/gif/${valorAtual}.gif`
-  return mygif.src = newGif;   
+  return urlGifPersona.src = newGif;   
 }
 
-const advance = () => {
+const next = () => {
   if (valorAtual === 3510) {
     let newGif = `https://static.ragnaplace.com/db/npc/gif/${valorAtual}.gif`;
-    numeracao.value = valorAtual;
-    return mygif.src = newGif;   
+    idPersona.value = valorAtual;
+    return urlGifPersona.src = newGif;   
   }
   valorAtual += 1;
   let newGif = `https://static.ragnaplace.com/db/npc/gif/${valorAtual}.gif`;
-  numeracao.value = valorAtual;
-  return mygif.src = newGif; 
+  idPersona.value = valorAtual;
+  return urlGifPersona.src = newGif; 
 }
 
-const retro = () => { 
+const back = () => { 
   if (valorAtual === 1) {
     let newGif = `https://static.ragnaplace.com/db/npc/gif/${valorAtual}.gif`
-    numeracao.value = valorAtual;
-    return mygif.src = newGif;
+    idPersona.value = valorAtual;
+    return urlGifPersona.src = newGif;
   }
   valorAtual -= 1;
   let newGif = `https://static.ragnaplace.com/db/npc/gif/${valorAtual}.gif`
-  numeracao.value = valorAtual;
-  return mygif.src = newGif;
+  idPersona.value = valorAtual;
+  return urlGifPersona.src = newGif;
 }
 
-const fav = () => {
-  let id = 0;
-  favoritos.push(mygif.src);
-  localStorage.setItem(id +=1, JSON.stringify(favoritos));
-  console.log(favoritos);
+const criaPersonagem = () => {
+  let cardPersonagem = {
+    id: Number(valorAtual),
+    name: name.value, // input name
+    clase: clase.value ,// input class
+    atk: Number(atk.value), // input atk
+    def: Number(def.value) , // input def
+    url: urlGifPersona.src
+  };
+  personagens.push(cardPersonagem);
+ console.log(personagens);
   const imgNPC = document.createElement("img");
 
-  favoritos.map((npc) => {
+  personagens.map((npc) => {
    
-    imgNPC.src = npc;
-    divImages.appendChild(imgNPC);
+    imgNPC.src = npc.url;
+    cardPersonas.appendChild(imgNPC);
   })
 }
 
-confirmaBtn.addEventListener('click',search);
-avancaBtn.addEventListener('click',advance);
-retornaBtn.addEventListener('click', retro);
-favoritarBtn.addEventListener('click', fav);
+confirmaBTN.addEventListener('click',search);
+nextBTN.addEventListener('click',next);
+backBTN.addEventListener('click', back);
+criaPersona.addEventListener('click', criaPersonagem);
