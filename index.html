@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ragnarok-Charts</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ragnarok</title>
-</head>
-
-<body>
-  <header>
-    <h1>Ragnarok NPC's</h1>
-    <button id="retorna">Retorna</button>
-    <button id="avanca">Avança</button>
-    <br>
-    <input type="number" id="idPersona" placeholder="Busca por Id">
-    <button id="confirma">Buscar</button>
-    <br>
-  </header>
-  <main>
-    <fieldset>
-      <legend>Crie um Personagem</legend>
-      <input type="text" id="name" placeholder="insira um nome">
-      <br>
-      <input type="text" id="clase" placeholder="insira uma classe">
-      <br>
-      <input type="number" id="atk" placeholder="insira um atk">
-      <br>
-      <input type="number" id="def" placeholder="insira um def">
-      <br>
-      <button id="criaPersona">Criar Personagem</button>
-      <br>
-    </fieldset>
-  </main>
-  <nav>
-    <img id="urlGifPersonas" src="https://static.ragnaplace.com/db/npc/gif/63.gif" alt="myGifRagnarok">
-    <br>
-  </nav>
-  <h3>Cards Criados
-    <div id="cardPersona"></div>
-  </h3>
-  <script type="module" src="index.js"></script>
-</body>
-
+  <body>
+    <h1 class="titulo">Personagens Ragnarok</h1>
+    <br />
+    <hr />
+    <section class="numeros">
+      <span id="numaterior">62</span>
+      <span id="numatual">63</span>
+      <span id="numproximo">64</span>
+    </section>
+    <picture>
+      <img
+        id="imganterior"
+        class="card"
+        src="https://static.ragnaplace.com/db/npc/gif/62.gif"
+        alt="myGifRagnarok"
+      />
+      <img
+        id="imgPrincipal"
+        class="card"
+        src="https://static.ragnaplace.com/db/npc/gif/63.gif"
+        alt="myGifRagnarok"
+      />
+      <img
+        id="imgproximo"
+        class="card"
+        src="https://static.ragnaplace.com/db/npc/gif/64.gif"
+        alt="myGifRagnarok"
+      />
+    </picture>
+    <hr />
+    <br />
+    <section class="controller">
+      <button class="A" id="voltar-button">A</button>
+      <button class="B" id="ir-button">B</button>
+    </section>
+    <script type="module" src="index.js"></script>
+  </body>
 </html>
