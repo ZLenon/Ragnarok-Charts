@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ragnarok-Charts</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
@@ -16,37 +16,55 @@
     <h1 class="titulo">Personagens Ragnarok</h1>
     <br />
     <hr />
-    <section class="numeros">
-      <span id="numaterior">62</span>
-      <span id="numatual">63</span>
-      <span id="numproximo">64</span>
-    </section>
-    <picture>
-      <img
-        id="imganterior"
-        class="card"
-        src="https://static.ragnaplace.com/db/npc/gif/62.gif"
-        alt="myGifRagnarok"
-      />
-      <img
-        id="imgPrincipal"
-        class="card"
-        src="https://static.ragnaplace.com/db/npc/gif/63.gif"
-        alt="myGifRagnarok"
-      />
-      <img
-        id="imgproximo"
-        class="card"
-        src="https://static.ragnaplace.com/db/npc/gif/64.gif"
-        alt="myGifRagnarok"
-      />
-    </picture>
-    <hr />
+
+    <div class="entradas">
+      <label for="numb-chart">
+        Digite um Numero:
+        <input type="number" class="numb-chart" id="numb-chart" />
+      </label>
+      <section class="controller">
+        <button class="A" id="voltar-button">A</button>
+        <button class="B" id="ir-button">B</button>
+      </section>
+    </div>
     <br />
-    <section class="controller">
-      <button class="A" id="voltar-button">A</button>
-      <button class="B" id="ir-button">B</button>
+    <hr />
+    <section class="quadro-cards">
+      <picture>
+        <img
+          id="imganterior"
+          class="card"
+          src="https://static.ragnaplace.com/db/npc/gif/62.gif"
+          alt="myGifRagnarok"
+        />
+        <legend class="legendas">
+          <span id="numaterior">62</span>
+        </legend>
+      </picture>
+      <picture>
+        <img
+          id="imgPrincipal"
+          class="card"
+          src="https://static.ragnaplace.com/db/npc/gif/63.gif"
+          alt="myGifRagnarok"
+        />
+        <legend class="legendas">
+          <span id="numatual">63</span>
+        </legend>
+      </picture>
+      <picture>
+        <img
+          id="imgproximo"
+          class="card"
+          src="https://static.ragnaplace.com/db/npc/gif/64.gif"
+          alt="myGifRagnarok"
+        />
+        <legend class="legendas">
+          <span id="numproximo">64</span>
+        </legend>
+      </picture>
     </section>
-    <script type="module" src="index.js"></script>
+
+    <script type="module" src="./Model/index.js"></script>
   </body>
 </html>

@@ -10,4 +10,4 @@ Neste projeto, foi desenvolvido uma página de cards do game Ragnarök Online (R
   - Criar cards usando HTML e CSS
   - Manipular DOM javascript
 
-[Link do Projeto](https://zlenon.github.io/Ragnarok/)
+[Link do Projeto](https://zlenon.github.io/Ragnarok-Charts/)
