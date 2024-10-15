@@ -1,6 +1,7 @@
 const irbutton = document.getElementById("ir-button");
 const voltarbutton = document.getElementById("voltar-button");
 const numbInput = document.getElementById("numb-chart");
+const checkboxfavorite = document.getElementById("checkboxfavorite");
 import { getDom, insertUrl } from "../utils/domutils.js";
 
 // -----------
@@ -34,4 +35,20 @@ voltarbutton.addEventListener("click", () => {
   numbInput.value = numatual.innerText;
 
   insertUrl(dom.imganterior, dom.imgPrincipal, dom.imgproximo);
+});
+
+checkboxfavorite.addEventListener("change", () => {
+  console.log(checkboxfavorite.checked);
+  const imgPrincipal = document.getElementById("imgPrincipal");
+  const favoritos = [];
+  if (checkboxfavorite.checked) {
+    favoritos.push(imgPrincipal.src);
+  } else {
+    favoritos.forEach((url) => {
+      if (url === imgPrincipal.src) {
+        favoritos.shift();
+      }
+    });
+  }
+  console.log(favoritos);
 });

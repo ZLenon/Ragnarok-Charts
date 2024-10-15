@@ -1,0 +1,14 @@
+:root {
+  --azul: skyblue;
+  --azulClaro: lightblue; 
+}
+
+body {
+  background: var(--azul);
+  font-family: 'Press Start 2P', cursive;  
+  color: white;  
+}
+
+.titulo {
+  text-align: center;
+}
