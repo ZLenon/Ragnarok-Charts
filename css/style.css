@@ -27,8 +27,6 @@ body {
 #imganterior, #imgproximo {
   background-color: silver;  
   filter: blur(4px);
-  width: 100px;
-  height: 100px;
 }
 
 

@@ -1,51 +1,37 @@
 const irbutton = document.getElementById("ir-button");
 const voltarbutton = document.getElementById("voltar-button");
 const numbInput = document.getElementById("numb-chart");
+import { getDom, insertUrl } from "../utils/domutils.js";
 
 // -----------
 numbInput.addEventListener("input", () => {
-  const imgPrincipal = document.getElementById("imgPrincipal");
-  const numaterior = document.getElementById("numaterior");
-  const numatual = document.getElementById("numatual");
-  const numproximo = document.getElementById("numproximo");
+  const dom = getDom();
 
-  numaterior.innerText = Number(numbInput.value) - 1;
-  numatual.innerText = Number(numbInput.value);
-  numproximo.innerText = Number(numbInput.value) + 1;
+  dom.numaterior.innerText = Number(numbInput.value) - 1;
+  dom.numatual.innerText = Number(numbInput.value);
+  dom.numproximo.innerText = Number(numbInput.value) + 1;
 
-  imganterior.src = `https://static.ragnaplace.com/db/npc/gif/${numaterior.innerText}.gif`;
-  imgPrincipal.src = `https://static.ragnaplace.com/db/npc/gif/${numatual.innerText}.gif`;
-  imgproximo.src = `https://static.ragnaplace.com/db/npc/gif/${numproximo.innerText}.gif`;
+  insertUrl(dom.imganterior, dom.imgPrincipal, dom.imgproximo);
 });
 // -----------
 irbutton.addEventListener("click", () => {
-  const imgPrincipal = document.getElementById("imgPrincipal");
-  const imganterior = document.getElementById("imganterior");
-  const imgproximo = document.getElementById("imgproximo");
-  const numaterior = document.getElementById("numaterior");
-  const numatual = document.getElementById("numatual");
-  const numproximo = document.getElementById("numproximo");
+  const dom = getDom();
 
-  numaterior.innerText = Number(numaterior.innerText) + 1;
-  numatual.innerText = Number(numatual.innerText) + 1;
-  numproximo.innerText = Number(numproximo.innerText) + 1;
-  imganterior.src = `https://static.ragnaplace.com/db/npc/gif/${numaterior.innerText}.gif`;
-  imgPrincipal.src = `https://static.ragnaplace.com/db/npc/gif/${numatual.innerText}.gif`;
-  imgproximo.src = `https://static.ragnaplace.com/db/npc/gif/${numproximo.innerText}.gif`;
+  dom.numaterior.innerText = Number(dom.numaterior.innerText) + 1;
+  dom.numatual.innerText = Number(dom.numatual.innerText) + 1;
+  dom.numproximo.innerText = Number(numproximo.innerText) + 1;
+  numbInput.value = numatual.innerText;
+
+  insertUrl(dom.imganterior, dom.imgPrincipal, dom.imgproximo);
 });
 // -----------
 voltarbutton.addEventListener("click", () => {
-  const imgPrincipal = document.getElementById("imgPrincipal");
-  const imganterior = document.getElementById("imganterior");
-  const imgproximo = document.getElementById("imgproximo");
-  const numaterior = document.getElementById("numaterior");
-  const numatual = document.getElementById("numatual");
-  const numproximo = document.getElementById("numproximo");
+  const dom = getDom();
 
-  numaterior.innerText = Number(numaterior.innerText) - 1;
-  numatual.innerText = Number(numatual.innerText) - 1;
-  numproximo.innerText = Number(numproximo.innerText) - 1;
-  imganterior.src = `https://static.ragnaplace.com/db/npc/gif/${numaterior.innerText}.gif`;
-  imgPrincipal.src = `https://static.ragnaplace.com/db/npc/gif/${numatual.innerText}.gif`;
-  imgproximo.src = `https://static.ragnaplace.com/db/npc/gif/${numproximo.innerText}.gif`;
+  dom.numaterior.innerText = Number(dom.numaterior.innerText) - 1;
+  dom.numatual.innerText = Number(dom.numatual.innerText) - 1;
+  dom.numproximo.innerText = Number(dom.numproximo.innerText) - 1;
+  numbInput.value = numatual.innerText;
+
+  insertUrl(dom.imganterior, dom.imgPrincipal, dom.imgproximo);
 });
