@@ -2,8 +2,13 @@ const irbutton = document.getElementById("ir-button");
 const voltarbutton = document.getElementById("voltar-button");
 const numbInput = document.getElementById("numb-chart");
 const checkboxfavorite = document.getElementById("checkboxfavorite");
-import { getDom, insertUrl } from "../utils/domutils.js";
-let favoritos = ["Lista de URL's"];
+const btnfavorite = document.getElementById("btnfavorite");
+import {
+  getDom,
+  insertUrl,
+  verifyCheck,
+  favoritos,
+} from "../utils/domutils.js";
 
 // -----------
 numbInput.addEventListener("input", () => {
@@ -45,23 +50,14 @@ checkboxfavorite.addEventListener("change", () => {
   const imgPrincipal = document.getElementById("imgPrincipal");
   if (!favoritos.includes(imgPrincipal.src)) {
     favoritos.push(imgPrincipal.src);
-    console.log("Adicionou!!!");
   } else {
     const index = favoritos.indexOf(imgPrincipal.src);
     favoritos.splice(index, 1);
-    console.log("Removeu!!!");
+  }
+  if (favoritos.length > 1) {
+    btnfavorite.disabled = false;
+  } else {
+    btnfavorite.disabled = true;
   }
   verifyCheck();
 });
-
-function verifyCheck() {
-  const imgPrincipal = document.getElementById("imgPrincipal");
-
-  if (favoritos.includes(imgPrincipal.src)) {
-    checkboxfavorite.checked = true;
-  } else {
-    checkboxfavorite.checked = false;
-  }
-
-  console.log(favoritos);
-}

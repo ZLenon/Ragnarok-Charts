@@ -23,4 +23,14 @@ function insertUrl(imganterior, imgPrincipal, imgproximo) {
   imgproximo.src = `https://static.ragnaplace.com/db/npc/gif/${numproximo.innerText}.gif`;
 }
 
-export { getDom, insertUrl };
+let favoritos = ["Lista de URL's"];
+function verifyCheck() {
+  const imgPrincipal = document.getElementById("imgPrincipal");
+
+  if (favoritos.includes(imgPrincipal.src)) {
+    checkboxfavorite.checked = true;
+  } else {
+    checkboxfavorite.checked = false;
+  }
+}
+export { getDom, insertUrl, favoritos, verifyCheck };
