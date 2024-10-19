@@ -61,3 +61,8 @@ checkboxfavorite.addEventListener("change", () => {
   }
   verifyCheck();
 });
+
+btnfavorite.addEventListener("click", () => {
+  localStorage.setItem("favoritos", JSON.stringify(favoritos));
+  window.location.href = "../pages/favoritos.html";
+});

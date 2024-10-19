@@ -1,6 +1,8 @@
 :root {
   --azul: skyblue;
   --azulClaro: lightblue; 
+  --roxo: #4E3B7F;
+  --roxoclaro: #6B52AE; 
 }
 
 body {
@@ -11,4 +13,31 @@ body {
 
 .titulo {
   text-align: center;
+}
+
+#voltarPagPrincipal, #limparFavoritos {
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  background-color: var(--roxoclaro);
+  border-radius: 13px;
+  box-shadow: 5px 5px 5px 0px black;
+}
+#voltarPagPrincipal:hover ,#limparFavoritos:hover{
+  background-color: var(--roxo);
+
+}
+
+main {
+  height: 550px;
+}
+
+img {
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid black;
+    background: linear-gradient(344deg, rgb(1 3 0 / 99%) 10%, #38e233 70%);
+
 }
